@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "myapp"
+    "myapp"  # Your application
 ]
 
 MIDDLEWARE = [
@@ -54,15 +54,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-# Database
+# Use an in-memory database for development
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DJANGO_DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('DJANGO_DB_NAME', 'mydatabase'),
-        'USER': os.getenv('DJANGO_DB_USER', 'myuser'),
-        'PASSWORD': os.getenv('DJANGO_DB_PASSWORD', 'mypassword'),
-        'HOST': os.getenv('DJANGO_DB_HOST', 'localhost'),
-        'PORT': os.getenv('DJANGO_DB_PORT', '5432'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
     }
 }
 
